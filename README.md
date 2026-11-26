@@ -14,8 +14,6 @@ npm run dev                       # http://localhost:3000
 
 `fixtures/sample-chat.csv`로 바로 테스트할 수 있습니다.
 
-## 구조
+## 문서
 
-- `app/page.tsx` — 업로드 화면과 결과(요약 · 토픽 · 액션 아이템 체크리스트)
-- `app/api/analyze/route.ts` — CSV를 받아 Ollama `/api/chat`에 JSON 스키마(`format`)와 함께 보냄
-- `lib/schema.ts` — 결과 스키마(zod). 프롬프트 출력 형식과 응답 검증에 함께 사용
+- [architecture.md](architecture.md): 데이터 흐름, 구성 요소, 설계 결정, 보안, 알려진 한계
