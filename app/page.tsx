@@ -28,6 +28,10 @@ export default function Home() {
       const formData = new FormData();
       formData.append("file", file);
       const res = await fetch("/api/analyze", { method: "POST", body: formData });
+      if (!res.headers.get("content-type")?.includes("application/json")) {
+        setError(`서버에서 예상하지 못한 응답이 왔습니다 (HTTP ${res.status}). 개발 서버 로그를 확인해 주세요.`);
+        return;
+      }
       const json = (await res.json()) as AnalyzeResponse;
       if (json.ok) {
         setResult(json.data);
