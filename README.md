@@ -10,7 +10,7 @@ ollama pull qwen3.8:27b-mlx       # 기본 모델 (다른 모델은 .env.local�
 cp .env.example .env.local        # 처음 한 번
 npm install
 npm run dev                       # http://localhost:3000
-npm test                          # API 라우트 테스트 (Ollama 불필요)
+npm run check                     # lint + 타입 체크 + 테스트 (약 2초, Ollama 불필요)
 ```
 
 `fixtures/sample-chat.csv`로 바로 테스트할 수 있습니다.
